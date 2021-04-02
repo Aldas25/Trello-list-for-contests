@@ -5,12 +5,13 @@
 
 [ ] upcoming contests:
     [X] Codeforces API
-    [ ] TopCoder API
+    [X] TopCoder API
 
 [ ] Add due date to trello card
 
 [ ] Have contest duration
 [ ] Update README
 [ ] Move everything under /source
+[ ] optimize trello.contest_added method
 
 [ ] More fun with Trello API
