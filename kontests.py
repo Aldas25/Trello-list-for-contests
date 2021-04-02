@@ -35,13 +35,13 @@ def get_upcoming_contests (site):
 
         if site == 'top_coder':
             platform = 'TC'
-            link = f'https://www.topcoder.com/challenges/;{contest["name"]}'
+            link = f'https://www.topcoder.com/challenges/ {contest["name"]}'
         elif site == 'kick_start':
             platform = 'Kick Start'
-            link = f'https://codingcompetitions.withgoogle.com/kickstart/schedule;{contest["name"]}'
+            link = f'https://codingcompetitions.withgoogle.com/kickstart/schedule {contest["name"]}'
         else:
             platform = 'Unknown'
-            link = f'Unknown link;{contest["name"]}'
+            link = f'Unknown link; {contest["name"]}'
 
         contest_object = Contest(
             platform=platform, 

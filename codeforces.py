@@ -30,8 +30,8 @@ def get_upcoming_contests ():
         contest_object = Contest(
             platform='CF', 
             name=contest['name'], 
-            start_time=contest['startTimeSeconds'], 
-            link= f'https://codeforces.com/contest/{contest["id"]}'
+            start_time=contest['startTimeSeconds']*1000, # start time in miliseconds (unix timestamp) 
+            link= f'https://codeforces.com/contests {contest["id"]}'
         )
 
         contests.append(contest_object)
@@ -40,4 +40,6 @@ def get_upcoming_contests ():
 
 
 if __name__ == '__main__':
-    get_upcoming_contests ()
+    cont = get_upcoming_contests ()
+    for c in cont:
+        c.print_details()

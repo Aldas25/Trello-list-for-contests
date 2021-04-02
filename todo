@@ -2,14 +2,8 @@
     [ ] Trello api requests
     [ ] CF api requests
     [ ] Atcoder - what if there are no upcoming contests?
+    [ ] Kontests api requests
 
-[ ] upcoming contests:
-    [X] Codeforces API
-    [X] TopCoder API
-
-[ ] Add due date to trello card
-
-[ ] Have contest duration
 [ ] Update README
 [ ] Move everything under /source
 [ ] optimize trello.contest_added method

@@ -8,7 +8,7 @@ contests_url = base_url + '/contests'
 # creates a Contest object from the row in html
 def row_to_contest (row):
     # getting values from the row in html
-    start_time = row[0][0].get('href')
+    start_time = row[0].text_content()
     contest_name = row[1][1].text_content()
     #duration = row[2].text_content()
     link = base_url + row[1][1].get('href')
@@ -42,4 +42,4 @@ def get_upcoming_contests ():
 if __name__ == '__main__':
     contests = get_upcoming_contests()
     for contest in contests:
-        print(contest)
+        contest.print_details()

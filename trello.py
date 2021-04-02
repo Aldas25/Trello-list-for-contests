@@ -152,7 +152,8 @@ def add_contest_to_contest_list (contest):
         'token': trello_auth['token'],
         'idList': trello_auth['contest_list_id'],
         'name': contest,
-        'desc': contest.link
+        'desc': contest.link,
+        'due': contest.start_time
     }
 
     response = requests.request(
@@ -169,6 +170,6 @@ def add_contest_to_contest_list (contest):
 
 if __name__ == '__main__':
     
-    cards = get_cards_in_list(trello_auth['contest_list_id'])
+    cards = get_lists_on_board(trello_auth['board_id'])
     print(json.dumps(json.loads(cards), indent=2))
     
