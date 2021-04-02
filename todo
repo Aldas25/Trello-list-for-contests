@@ -3,9 +3,5 @@
     [ ] CF api requests
     [ ] Atcoder - what if there are no upcoming contests?
     [ ] Kontests api requests
-
-[ ] Update README
-[ ] Move everything under /source
 [ ] optimize trello.contest_added method
-
 [ ] More fun with Trello API
