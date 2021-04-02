@@ -14,7 +14,7 @@ Sites from which contests are taken:
 
 ## How to run
 
-Firstly, you will need a key and a token for Trello API. More info can be found [here](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/) and [here](https://trello.com/app-key)
+Firstly, you will need a key and a token for Trello API. More info can be found [here](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/) and [here](https://trello.com/app-key).
 
 After cloning or downloading this repository, in the `source` folder you have to create the `auth.py` file which should look the same as `auth_example.py`.
 
