@@ -9,3 +9,7 @@ class Contest:
     def __str__ (self):
         ret = f'[{self.platform}] {self.name}'
         return ret
+
+    def print_details (self):
+        msg = f'Contest at {self.platform}: {self.name} ({self.start_time}), link: {self.link}'
+        print(msg)
