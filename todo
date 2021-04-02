@@ -3,5 +3,6 @@
 [ ] Codeforces API
 [ ] TopCoder API
 
-Later:
-    [ ] Have contest duration
+[ ] Have contest duration
+[ ] Update README
+[ ] Move everything under /source

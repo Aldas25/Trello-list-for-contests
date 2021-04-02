@@ -1,7 +1,9 @@
 import requests
 import json
 from auth import trello_auth
+from contest import Contest
 
+# Based on Trello API documentation: https://developer.atlassian.com/cloud/trello/rest/api-group-actions/
 base_url = 'https://api.trello.com'
 
 # returns all trello boards created by me (I hope so :D)
@@ -80,7 +82,7 @@ def get_lists_on_board (id):
 
 
 def get_list (id):
-    url = base_url + f'/1/boards/{id}'
+    url = base_url + f'/1/lists/{id}'
 
     headers = {
         'Accept': 'application/json'
@@ -99,38 +101,74 @@ def get_list (id):
     )
 
     if response.text == 'invalid id':
-        raise Exception(f'Invalid board id = {id}')
+        raise Exception(f'Invalid list id = {id}')
+    
+    return response.text
+
+
+def get_cards_in_list (id):
+    url = base_url + f'/1/lists/{id}/cards'
+
+    headers = {
+        'Accept': 'application/json'
+    }
+
+    query = {
+        'key': trello_auth['key'],
+        'token': trello_auth['token']
+    }
+
+    response = requests.request(
+        'GET',
+        url,
+        headers=headers,
+        params=query
+    )
+
+    if response.text == 'invalid id':
+        raise Exception(f'Invalid list id = {id}')
+    
+    return response.text
+
+
+# checks whether contest is already in the list
+# (by checking if there is a card with description same as link of the contest)
+def contest_added (contest):
+    cards_json = get_cards_in_list(trello_auth['contest_list_id'])
+    cards = json.loads (cards_json)
+    
+    for card in cards:
+        if card['desc'] == contest.link:
+            return True
+
+    return False
+
+
+def add_contest_to_contest_list (contest):
+    url = base_url + f'/1/cards'
+
+    query = {
+        'key': trello_auth['key'],
+        'token': trello_auth['token'],
+        'idList': trello_auth['contest_list_id'],
+        'name': contest,
+        'desc': contest.link
+    }
+
+    response = requests.request(
+        'POST',
+        url,
+        params=query
+    )
+
+    # print(response.text)
+    # print(json.dumps(response.text, indent=2, separators=(',', ': ')))
     
     return response.text
 
 
 if __name__ == '__main__':
     
-    # contest_list = get_lists_on_board(trello_auth['board_id'])
-    # print(json.dumps(json.loads(contest_list), indent=2))
-
-    # boards = get_my_boards()
-    # print(json.dumps(json.loads(boards), indent=2))
-    
-    # try:
-    #     board = get_board(trello_auth['board_id'])
-    #     print(json.dumps(json.loads(board), indent=2))
-    # except Exception as e:
-    #     print(e.args)
-    #     print('An error has occured :(')
-
-    # url = 'https://api.trello.com/1/lists/{}'.format(trello_auth['board_id'])
-
-    # query = {
-    #     'key': trello_auth['key'],
-    #     'token': trello_auth['token']
-    # }
-
-    # response = requests.request(
-    #     'GET',
-    #     url,
-    #     params=query
-    # )
-
-    # print(response.text)
+    cards = get_cards_in_list(trello_auth['contest_list_id'])
+    print(json.dumps(json.loads(cards), indent=2))
     

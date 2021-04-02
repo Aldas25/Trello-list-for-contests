@@ -7,6 +7,5 @@ class Contest:
         # self.duration = duration
 
     def __str__ (self):
-        ret = f'Contest at {self.platform}: {self.name}, starting at {self.start_time}'
-        # ret += '\nlink: {}'.format(self.link)
+        ret = f'[{self.platform}] {self.name}'
         return ret

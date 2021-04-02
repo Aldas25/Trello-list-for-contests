@@ -19,7 +19,7 @@ def row_to_contest (row):
     return contest
 
 
-def get_atcoder_upcoming_contests ():
+def get_upcoming_contests ():
     page = requests.get(contests_url)
     doc = lh.fromstring(page.content)
 
@@ -35,6 +35,6 @@ def get_atcoder_upcoming_contests ():
     return contests
 
 if __name__ == '__main__':
-    contests = get_atcoder_upcoming_contests()
+    contests = get_upcoming_contests()
     for contest in contests:
         print(contest)
