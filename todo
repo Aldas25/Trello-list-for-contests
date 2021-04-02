@@ -1,8 +1,16 @@
-[ ] Do error handling in trello requests
+[ ] Error handling:
+    [ ] Trello api requests
+    [ ] CF api requests
+    [ ] Atcoder - what if there are no upcoming contests?
 
-[ ] Codeforces API
-[ ] TopCoder API
+[ ] upcoming contests:
+    [X] Codeforces API
+    [ ] TopCoder API
+
+[ ] Add due date to trello card
 
 [ ] Have contest duration
 [ ] Update README
 [ ] Move everything under /source
+
+[ ] More fun with Trello API

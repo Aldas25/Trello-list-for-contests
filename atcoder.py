@@ -14,7 +14,12 @@ def row_to_contest (row):
     link = base_url + row[1][1].get('href')
 
     # creating a new contest object
-    contest = Contest(platform='AC', name=contest_name, start_time=start_time, link=link)
+    contest = Contest(
+        platform='AC', 
+        name=contest_name, 
+        start_time=start_time, 
+        link=link
+    )
 
     return contest
 
