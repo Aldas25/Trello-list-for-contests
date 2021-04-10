@@ -22,3 +22,8 @@ Now just run the `main.py` file in the `source` folder:
 ```
 python source/main.py
 ```
+
+## How it looks
+After creating the Trello list called Contests and running the script, it fills that list with upcoming contests:
+
+![An example](https://user-images.githubusercontent.com/26027716/114265567-2796cc80-99fa-11eb-9776-cbb5f117c57c.png)
