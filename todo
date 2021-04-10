@@ -1,7 +1,0 @@
-[ ] Error handling:
-    [ ] Trello api requests
-    [ ] CF api requests
-    [ ] Atcoder - what if there are no upcoming contests?
-    [ ] Kontests api requests
-[ ] optimize trello.contest_added method
-[ ] More fun with Trello API
